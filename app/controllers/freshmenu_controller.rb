@@ -1,5 +1,4 @@
 require 'pry'
-
 class FreshmenuController < ApplicationController
 
   def index
@@ -11,7 +10,7 @@ class FreshmenuController < ApplicationController
   end
 
   def new
-  	#@freshmenu = Freshmenu.new
+  	@freshmenu = Freshmenu.new
   end
 
   def edit
@@ -19,9 +18,7 @@ class FreshmenuController < ApplicationController
   end
 
   def create
-  	render plain: params[:freshmenu].inspect
-  	#@freshmenu = Freshmenu.new(freshmenu_params)
-    ##binding.pry
+  	@freshmenu = Freshmenu.new(freshmenu_params)
   	if @freshmenu.save
   		redirect_to @freshmenu
   	else
@@ -31,10 +28,7 @@ class FreshmenuController < ApplicationController
 
   def update
   	@freshmenu = Freshmenu.find(params[:id])
-
-
   	if @freshmenu.update(freshmenu_params)
-      ##binding.pry
   		redirect_to @freshmenu
   	else
   		render 'edit'
