@@ -1,0 +1,35 @@
+<h3 style="color:grey;">Edit menu:</h3>
+
+<%= form_for :freshmenu, url: freshmenu_path(@freshmenu), method: :put do |f| %>
+
+	<% if @freshmenu.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@freshmenu.errours.count, "error") %> prohibited this menu from being saved:
+			</h2>
+			<ul>
+				<% @freshmenu.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+    <%= f.label :cuisine %><br>
+    <%= f.text_field :cuisine %>
+  </p>
+  <p>
+    <%= f.label :orientate %><br>
+    <%= f.text_area :orientate, value: @freshmenu.orientate %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <p>
+    <%= link_to '< back', freshmenu_path %>
+  </p>
+
+<% end %>

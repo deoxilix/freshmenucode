@@ -1,0 +1,14 @@
+<p>
+	<strong>Cuisine:</strong>
+	<%= @freshmenu.cuisine %>
+</p>
+
+<p>
+	<strong>Orientate:</strong>
+	<%= @freshmenu.o 	rientate %>
+</p>
+
+<p>
+    <%= link_to 'Ala Carte <', controller: 'freshmenu' %><br>
+    <%= link_to "Edit", edit_freshmenu_path(@freshmenu) %>
+</p>

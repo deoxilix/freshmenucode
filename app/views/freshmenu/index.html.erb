@@ -1,0 +1,25 @@
+<p>
+	<%= link_to "Home", welcome_index_path %>
+</p><hr />
+<h1>Ala Carte :P</h1>
+
+<center>
+	<table>
+		<tr>
+			<th>Cuisine</th>
+			<th>Orientate</th>
+		</tr>
+
+		<% @freshmenu.each do |freshmenu| %>
+		  <tr>
+		  	<td><%= freshmenu.cuisine %></td>
+		  	<td><%= freshmenu.orientate %></td>
+		  </tr>
+		 <% end %>
+	</table>
+</center>
+<hr />
+<p>
+	<%= link_to "Fresh menu", new_freshmenu_path %>
+	
+</p>

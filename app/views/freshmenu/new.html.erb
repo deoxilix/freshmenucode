@@ -1,0 +1,22 @@
+<h3>Today's Menu!!</h3>
+
+<%= form_for :freshmenu, url: freshmenu_index_path do |f| %>
+
+  <p>
+    <%= f.label :cuisine %><br>
+    <%= f.text_field :cuisine %>
+  </p>
+  <p>
+    <%= f.label :orientate %><br>
+    <%= f.text_area :orientate %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <p>
+    <%= link_to '< back', controller: 'freshmenu', action: 'index' %>
+  </p>
+
+<% end %>

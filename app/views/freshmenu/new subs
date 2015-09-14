@@ -1,0 +1,12 @@
+  <% if @freshmenu.errors.any? %>
+    <div id="error_explanation">
+      <h3>
+        <%= pluralize(@freshmenu.errors.count, "error") %> prohibited this menu from being saved:
+      </h3>
+      <ul>
+        <% @freshmenu.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
